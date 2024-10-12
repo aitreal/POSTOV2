@@ -93,6 +93,4 @@ with chat_placeholder.container():
 st.text_input("ถามคำถามของคุณที่นี่:", on_change=on_input_change, key="user_input")   
 
 # ปุ่มเพื่อกลับไปยังหน้า login
-if st.button("กลับไปยังหน้า Login"):
-    st.session_state.current_page = "login"  # เปลี่ยนไปยังหน้า Login
-    st.switch_page("pages/1_Login.py")  # สลับไปยังหน้า Login
+
