@@ -27,9 +27,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 st.markdown('<h1 class="center">หน้าอัปโหลด</h1>', unsafe_allow_html=True)
-
-uploaded_file = st.file_uploader("อัปโหลดไฟล์", type=['jpg', 'png'])
 st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)  # เปลี่ยนค่า 30px ตามต้องการ
+uploaded_file = st.file_uploader("อัปโหลดไฟล์", type=['jpg', 'png'])
 
 if uploaded_file is not None:
     image_path = os.path.join(UPLOAD_FOLDER, uploaded_file.name)
