@@ -60,7 +60,6 @@ def login():
 
     # ฝั่งขวา: ฟอร์มล็อกอิน
     with col2:
-        st.image("https://png.pngtree.com/png-clipart/20190904/original/pngtree-green-plant-path-png-image_4461980.jpg", width=100)  # ใส่ลิงก์ภาพขนาดเล็ก
         st.markdown("<h2 style='text-align: center; color: #f55;'>Login</h2>", unsafe_allow_html=True)
 
         if "login_status" not in st.session_state:
