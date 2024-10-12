@@ -29,9 +29,9 @@ st.markdown("""
     .stButton button {
         background-color: #f55;
         color: white;
-        width: 100%;
+        width: 90%;
         border-radius: 8px;
-        height: 45px;
+        height: 35px;
         font-size: 18px;
     }
     .stButton button:hover {
@@ -46,9 +46,9 @@ st.markdown("""
         color: white;
     }
     .full-width-button {
-        width: 100%; /* ทำให้ปุ่มกว้างเต็ม */
+        width: 90%; /* ทำให้ปุ่มกว้างเต็ม */
         border-radius: 8px;
-        height: 45px;
+        height: 35px;
         font-size: 18px;
         background-color: #f55;
         color: white;
