@@ -26,11 +26,7 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
-
-st.title("หน้าอัปโหลด")
-
-# จัดตำแหน่งข้อความให้อยู่ตรงกลาง
-st.markdown('<h1 class="center">อัปโหลดไฟล์</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="center">หน้าอัปโหลด</h1>', unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader("อัปโหลดไฟล์", type=['jpg', 'png'])
 
