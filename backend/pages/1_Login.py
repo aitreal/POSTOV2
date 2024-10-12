@@ -100,7 +100,7 @@ def login():
         # สร้างปุ่ม Sign Up
         if st.button("Sign Up"):
             st.session_state.current_page = "Sign Up"  # เปลี่ยนไปยังหน้า Sign Up
-            st.experimental_rerun()  # รีเฟรชหน้า
+            st.switch_page("pages/2_SignUp.py")  # สลับไปยังหน้า Sign Up
 
 if __name__ == "__main__":
     login()
