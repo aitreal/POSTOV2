@@ -25,7 +25,8 @@ st.markdown("""
             width: 300px;  /* ปรับขนาดรูปภาพตามต้องการ */
         }
         .center-image {
-            text-align: center;
+            display: flex;
+            justify-content: center;
             margin-top: 20px; /* ระยะห่างจากด้านบน */
         }
     </style>
