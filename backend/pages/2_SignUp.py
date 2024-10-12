@@ -103,7 +103,7 @@ def sign_up():
 
         # ข้อความกลับไปยังหน้า Login
         st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)  # เพิ่มระยะห่าง
-        if st.button("Back to LOGIN"):
+        if st.button("Back to login"):
             st.session_state.current_page = "login"  # เปลี่ยนไปยังหน้า Sign Up
             st.switch_page("pages/1_Login.py")  # สลับไปยังหน้า Sign Up
         st.markdown("</div>", unsafe_allow_html=True)
