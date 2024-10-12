@@ -69,14 +69,14 @@ def sign_up():
     col1, col2 = st.columns([1, 1])  # สร้างสองคอลัมน์
 
     with col1:
-        st.markdown("<h1 style='color:#f55; font-size: 40px;'>Welcome to POSTO!</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='color:#f55; font-size: 50px;'>Welcome to POSTO!</h1>", unsafe_allow_html=True)
         st.markdown("<div class='image-container'></div>", unsafe_allow_html=True)
         st.image("https://png.pngtree.com/png-clipart/20190904/original/pngtree-green-plant-path-png-image_4461980.jpg", width=300)
         # เปลี่ยนคำว่า POSTO ให้เล็กลงและเป็นสีแดง
         st.markdown("<h1 style='color:#f55; font-size: 36px;'>POSTO</h1>", unsafe_allow_html=True)
 
     with col2:
-        st.title("Sign Up")
+        st.markdown("<h1 style='color:#f55; font-size: 50px;'>Sign Up</h1>", unsafe_allow_html=True)
         st.markdown("<div class='form-container'>", unsafe_allow_html=True)
         email = st.text_input("Email")
         password = st.text_input("Password", type="password")
