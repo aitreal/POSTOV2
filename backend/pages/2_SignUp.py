@@ -63,7 +63,6 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 def sign_up():
-    st.title("POSTO")
 
     if "signup_status" not in st.session_state:
         st.session_state.signup_status = None  # ตั้งค่าเริ่มต้นเป็น None
@@ -72,9 +71,10 @@ def sign_up():
     col1, col2 = st.columns([1, 1])  # สร้างสองคอลัมน์
 
     with col1:
-        st.markdown("<h1 style='color:white;'>Welcome to POSTO!</h1>", unsafe_allow_html=True)
+        st.title("Welcome to POSTO!")
         st.markdown("<div class='image-container'></div>", unsafe_allow_html=True)
         st.image("https://png.pngtree.com/png-clipart/20190904/original/pngtree-green-plant-path-png-image_4461980.jpg", width=300)
+        st.markdown("<h1 style='color:white;'>POSTO</h1>", unsafe_allow_html=True)
     with col2:
         st.title("Sign Up")
         st.markdown("<div class='form-container'>", unsafe_allow_html=True)
