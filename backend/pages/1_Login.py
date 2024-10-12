@@ -61,7 +61,7 @@ st.markdown("""
 
 def login():
     # แบ่งหน้าจอออกเป็นสองฝั่ง
-    col1, col2 = st.columns([2, 3])
+    col1, col2 = st.columns([1, 1])
 
     # ฝั่งซ้าย: แสดงภาพและข้อความต้อนรับ
     with col1:
