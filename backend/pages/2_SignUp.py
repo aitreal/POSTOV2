@@ -95,6 +95,12 @@ def sign_up():
             st.success("Sign Up สำเร็จ! กรุณาเข้าสู่ระบบ.")
             st.session_state.current_page = "login"  # เปลี่ยนไปยังหน้า Home
             st.switch_page("pages/1_Login.py")  # สลับไปยังหน้า Login
+
+        # ปุ่มกลับไปยังหน้า Login
+        if st.button("กลับไปยังหน้า Login"):
+            st.session_state.current_page = "login"  # เปลี่ยนไปยังหน้า Home
+            st.switch_page("pages/1_Login.py")  # สลับไปยังหน้า Login
+
         st.markdown("</div>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
