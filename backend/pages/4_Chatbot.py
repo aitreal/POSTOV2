@@ -37,6 +37,12 @@ st.markdown("""
     .stButton button:hover {
         background-color: #ff8787;
     }
+    .chat-container {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
     </style>
     """, unsafe_allow_html=True)
 
@@ -94,4 +100,7 @@ st.text_input("ถามคำถามของคุณที่นี่:", o
 # ปุ่มเพื่อกลับไปยังหน้า login
 if st.button("กลับไปยังหน้า Login"):
     st.session_state.current_page = "login"  # เปลี่ยนไปยังหน้า Login
-    st.switch_page("pages/1_Login.py")  # สลับไปยังหน้า Login
+    st.session_state.past.clear()  # ล้างข้อความก่อนหน้า
+    st.session_state.generated.clear()  # ล้างคำตอบก่อนหน้า
+    st.session_state.user_input = ""  # ล้างช่องข้อความ
+    st.experimental_rerun()  # โหลดหน้าจอใหม่
