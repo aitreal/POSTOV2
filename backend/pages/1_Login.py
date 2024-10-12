@@ -93,7 +93,7 @@ def login():
             st.success("Login สำเร็จ!")
             st.session_state.current_page = "home"  # เปลี่ยนไปยังหน้า Home
             st.switch_page("pages/4_Chatbot.py")  # สลับไปยังหน้า Home
-        st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)  # เปลี่ยนค่า 30px ตามต้องการ
+        st.markdown("<div style='margin-top: 5px;'></div>", unsafe_allow_html=True)  # เปลี่ยนค่า 30px ตามต้องการ
         # ลิงก์ไปยังหน้า Sign Up
         st.markdown("""<div style='text-align: center;'><span class='small-font'>Don't have an account?</span></div>""", unsafe_allow_html=True)
         
