@@ -79,7 +79,7 @@ def login():
         # สร้างฟอร์มล็อกอิน
         email = st.text_input("Email", placeholder="Email")
         password = st.text_input("Password", placeholder="Password", type="password")
-
+        st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)  # เปลี่ยนค่า 30px ตามต้องการ
         if st.button("Login"):
             try:
                 user = auth.sign_in_with_email_and_password(email, password)
@@ -96,7 +96,7 @@ def login():
 
         # ลิงก์ไปยังหน้า Sign Up
         st.markdown("""<div style='text-align: center;'><span class='small-font'>Don't have an account?</span></div>""", unsafe_allow_html=True)
-
+        st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)  # เปลี่ยนค่า 30px ตามต้องการ
         # สร้างปุ่ม Sign Up
         if st.button("Sign Up"):
             st.session_state.current_page = "Sign Up"  # เปลี่ยนไปยังหน้า Sign Up
