@@ -28,6 +28,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 st.markdown('<h1 class="center">หน้าอัปโหลด</h1>', unsafe_allow_html=True)
 st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)  # เปลี่ยนค่า 30px ตามต้องการ
+st.image("https://png.pngtree.com/png-clipart/20190904/original/pngtree-green-plant-path-png-image_4461980.jpg", width=300)
+st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)  # เปลี่ยนค่า 30px ตามต้องการ
 uploaded_file = st.file_uploader("อัปโหลดไฟล์", type=['jpg', 'png'])
 
 if uploaded_file is not None:
