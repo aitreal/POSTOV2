@@ -18,6 +18,7 @@ st.markdown("""
     <style>
         .center {
             text-align: center;
+            text-color: #f55;
         }
         .upload-image {
             display: block;
