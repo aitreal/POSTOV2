@@ -24,12 +24,22 @@ st.markdown("""
             margin: 0 auto;
             width: 300px;  /* ปรับขนาดรูปภาพตามต้องการ */
         }
+        .center-image {
+            text-align: center;
+            margin-top: 20px; /* ระยะห่างจากด้านบน */
+        }
     </style>
 """, unsafe_allow_html=True)
+
+# แสดงหัวข้อหน้าอัปโหลด
 st.markdown('<h1 class="center">หน้าอัปโหลด</h1>', unsafe_allow_html=True)
-st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)  # เปลี่ยนค่า 30px ตามต้องการ
+
+# แสดงรูปภาพด้านบน
+st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)  # ระยะห่างจากด้านบน
 st.image("https://png.pngtree.com/png-clipart/20190904/original/pngtree-green-plant-path-png-image_4461980.jpg", width=300)
-st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)  # เปลี่ยนค่า 30px ตามต้องการ
+
+# อัปโหลดไฟล์
+st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)  # ระยะห่างจากด้านบน
 uploaded_file = st.file_uploader("อัปโหลดไฟล์", type=['jpg', 'png'])
 
 if uploaded_file is not None:
@@ -54,4 +64,7 @@ if uploaded_file is not None:
         st.warning("ไม่พบชื่อในภาพ")
 
     # แสดงรูปภาพที่อัปโหลด
+    st.markdown("<div class='center-image'>", unsafe_allow_html=True)  # จัดตำแหน่งรูปภาพให้อยู่ตรงกลาง
     st.image(image_path, caption='รูปภาพที่อัปโหลด', use_column_width=True)  # ใช้ use_column_width=True เพื่อให้รูปภาพปรับขนาดให้พอดีกับคอลัมน์
+    st.markdown("</div>", unsafe_allow_html=True)  # ปิด div สำหรับจัดตำแหน่ง
+
