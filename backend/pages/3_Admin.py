@@ -11,14 +11,14 @@ CSV_FILE = 'backend/names.csv'  # แก้ไขให้ตรงตามพ�
 
 # กำหนด URL ของรูปโปรไฟล์
 user_avatar = "https://firebasestorage.googleapis.com/v0/b/posto-ai-app.appspot.com/o/user.png?alt=media&token=f22ea9fc-4de4-4ed9-801b-4a2875312905"  # URL ของรูปโปรไฟล์ผู้ใช้
-bot_avatar = "https://firebasestorage.googleapis.com/v0/b/posto-ai-app.appspot.com/o/robot.png?alt=media&token=99e37f4c-dbef-4d07-86a5-75e70585ac54"    # URL ของรูปโปรไฟล์ Chatbot
+bot_avatar = "https://firebasestorage.googleapis.com/v0/b/posto-ai-app.appspot.com/o/robot.png?alt=media&token=99e37f4c-dbef-4d07-86a5-75e70585ac54"  # URL ของรูปโปรไฟล์ Chatbot
 
 # CSS เพื่อปรับแต่งเลย์เอาต์
 st.markdown("""
     <style>
         .center {
             text-align: center;
-            text-color: #f55;
+            color: #f55;  /* เปลี่ยนสีข้อความเป็น #f55 */
         }
         .upload-image {
             display: block;
@@ -30,6 +30,11 @@ st.markdown("""
             justify-content: center;
             margin-top: 20px; /* ระยะห่างจากด้านบน */
         }
+        .upload-text {
+            color: #f55;  /* เปลี่ยนสีข้อความ "อัปโหลดไฟล์" เป็น #f55 */
+            text-align: center;
+            font-size: 20px;  /* ปรับขนาดฟอนต์ตามต้องการ */
+        }
     </style>
 """, unsafe_allow_html=True)
 
@@ -39,7 +44,8 @@ st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)  # 
 
 # อัปโหลดไฟล์
 st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)  # ระยะห่างจากด้านบน
-uploaded_file = st.file_uploader("อัปโหลดไฟล์", type=['jpg', 'png'])
+st.markdown('<h2 class="upload-text">อัปโหลดไฟล์</h2>', unsafe_allow_html=True)  # เปลี่ยนเป็นหัวข้อด้วยสี #f55
+uploaded_file = st.file_uploader("", type=['jpg', 'png'])  # ปิดข้อความที่อยู่ในป้าย
 
 if uploaded_file is not None:
     image_path = os.path.join(UPLOAD_FOLDER, uploaded_file.name)
@@ -66,4 +72,3 @@ if uploaded_file is not None:
     st.markdown("<div class='center-image'>", unsafe_allow_html=True)  # จัดตำแหน่งรูปภาพให้อยู่ตรงกลาง
     st.image(image_path, caption='รูปภาพที่อัปโหลด', use_column_width=True)  # ใช้ use_column_width=True เพื่อให้รูปภาพปรับขนาดให้พอดีกับคอลัมน์
     st.markdown("</div>", unsafe_allow_html=True)  # ปิด div สำหรับจัดตำแหน่ง
-
