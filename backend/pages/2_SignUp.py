@@ -45,6 +45,20 @@ st.markdown("""
         font-size: 18px;
         color: white;
     }
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .form-container {
+        width: 50%;
+        padding: 20px;
+    }
+    .image-container {
+        width: 50%;
+        background-image: url('https://your-image-url.com/image.jpg');  /* แก้ไขเป็น URL ของรูปภาพ */
+        background-size: cover;
+        background-position: center;
+    }
     </style>
     """, unsafe_allow_html=True)
 
@@ -54,20 +68,29 @@ def sign_up():
     if "signup_status" not in st.session_state:
         st.session_state.signup_status = None  # ตั้งค่าเริ่มต้นเป็น None
 
-    email = st.text_input("Email")
-    password = st.text_input("Password", type="password")
+    # สร้างเลย์เอาต์สำหรับแบ่งครึ่งหน้า
+    col1, col2 = st.columns([1, 1])  # สร้างสองคอลัมน์
 
-    if st.button("Sign Up"):
-        try:
-            auth.create_user_with_email_and_password(email, password)
-            st.session_state.signup_status = "success"
-        except:
-            st.error("Sign Up ไม่สำเร็จ กรุณาตรวจสอบข้อมูลอีกครั้ง.")
+    with col1:
+        st.markdown("<div class='image-container'></div>", unsafe_allow_html=True)
 
-    if st.session_state.signup_status == "success":
-        st.success("Sign Up สำเร็จ! กรุณาเข้าสู่ระบบ.")
-        st.session_state.current_page = "login"  # เปลี่ยนไปยังหน้า Home
-        st.switch_page("pages/1_Login.py")  # สลับไปยังหน้า Login
+    with col2:
+        st.markdown("<div class='form-container'>", unsafe_allow_html=True)
+        email = st.text_input("Email")
+        password = st.text_input("Password", type="password")
+
+        if st.button("Sign Up"):
+            try:
+                auth.create_user_with_email_and_password(email, password)
+                st.session_state.signup_status = "success"
+            except:
+                st.error("Sign Up ไม่สำเร็จ กรุณาตรวจสอบข้อมูลอีกครั้ง.")
+
+        if st.session_state.signup_status == "success":
+            st.success("Sign Up สำเร็จ! กรุณาเข้าสู่ระบบ.")
+            st.session_state.current_page = "login"  # เปลี่ยนไปยังหน้า Home
+            st.switch_page("pages/1_Login.py")  # สลับไปยังหน้า Login
+        st.markdown("</div>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     sign_up()
