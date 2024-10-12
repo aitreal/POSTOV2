@@ -32,7 +32,7 @@ st.markdown("""
         }
         .upload-text {
             color: #f55;  /* เปลี่ยนสีข้อความ "อัปโหลดไฟล์" เป็น #f55 */
-            font-size: 12px;  /* ปรับขนาดฟอนต์ตามต้องการ */
+            font-size: 18px;  /* ปรับขนาดฟอนต์ตามต้องการ */
         }
     </style>
 """, unsafe_allow_html=True)
