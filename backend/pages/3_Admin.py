@@ -32,6 +32,8 @@ st.markdown("""
         }
         .upload-text {
             color: #f55;  /* เปลี่ยนสีข้อความ "อัปโหลดไฟล์" เป็น #f55 */
+            text-align: center;
+            font-size: 8px;  /* ปรับขนาดฟอนต์ตามต้องการ */
         }
     </style>
 """, unsafe_allow_html=True)
