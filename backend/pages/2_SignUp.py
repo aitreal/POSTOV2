@@ -75,6 +75,7 @@ def sign_up():
         st.markdown("<div class='image-container'></div>", unsafe_allow_html=True)
 
     with col2:
+        st.title("Sign Up")
         st.markdown("<div class='form-container'>", unsafe_allow_html=True)
         email = st.text_input("Email")
         password = st.text_input("Password", type="password")
