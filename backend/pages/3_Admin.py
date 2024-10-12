@@ -36,7 +36,7 @@ st.markdown('<h1 class="center">หน้าอัปโหลด</h1>', unsafe_
 
 # แสดงรูปภาพด้านบน
 st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)  # ระยะห่างจากด้านบน
-st.image("https://png.pngtree.com/png-clipart/20190904/original/pngtree-green-plant-path-png-image_4461980.jpg", width=300)
+st.image(<div class='center-image'>"https://png.pngtree.com/png-clipart/20190904/original/pngtree-green-plant-path-png-image_4461980.jpg", width=300)
 
 # อัปโหลดไฟล์
 st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)  # ระยะห่างจากด้านบน
