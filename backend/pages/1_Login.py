@@ -55,7 +55,7 @@ def login():
     # ฝั่งซ้าย: แสดงภาพและข้อความต้อนรับ
     with col1:
         st.markdown("<h1 style='color:white;'>Welcome to POSTO!</h1>", unsafe_allow_html=True)
-        st.image("https://png.pngtree.com/png-clipart/20190904/original/pngtree-green-plant-path-png-image_4461980.jpg", width=300)  # ใส่ลิงก์ภาพ
+        st.image("https://png.pngtree.com/png-clipart/20201208/original/pngtree-hand-drawn-parcel-delivery-service-elements-png-image_5553220.jpg", width=300)  # ใส่ลิงก์ภาพ
         st.markdown("<h2 style='color:#f55;'>POSTO</h2>", unsafe_allow_html=True)
 
     # ฝั่งขวา: ฟอร์มล็อกอิน
