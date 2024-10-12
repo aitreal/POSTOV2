@@ -55,7 +55,6 @@ st.markdown("""
     }
     .image-container {
         width: 50%;
-        background-image: url('https://your-image-url.com/image.jpg');  /* แก้ไขเป็น URL ของรูปภาพ */
         background-size: cover;
         background-position: center;
     }
