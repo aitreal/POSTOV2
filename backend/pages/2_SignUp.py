@@ -73,13 +73,17 @@ def sign_up():
         st.title("Welcome to POSTO!")
         st.markdown("<div class='image-container'></div>", unsafe_allow_html=True)
         st.image("https://png.pngtree.com/png-clipart/20190904/original/pngtree-green-plant-path-png-image_4461980.jpg", width=300)
-        st.markdown("<h1 style='color:#f55; font-size: 30px;'>POSTO</h1>", unsafe_allow_html=True)
+        # เปลี่ยนคำว่า POSTO ให้เล็กลงและเป็นสีแดง
+        st.markdown("<h1 style='color:red; font-size: 36px;'>POSTO</h1>", unsafe_allow_html=True)
 
     with col2:
         st.title("Sign Up")
         st.markdown("<div class='form-container'>", unsafe_allow_html=True)
         email = st.text_input("Email")
         password = st.text_input("Password", type="password")
+
+        # เพิ่มช่องว่างด้านบนของปุ่ม Sign Up
+        st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)  # เปลี่ยนค่า 30px ตามต้องการ
 
         if st.button("Sign Up"):
             try:
