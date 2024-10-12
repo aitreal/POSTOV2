@@ -55,12 +55,12 @@ def login():
     # ฝั่งซ้าย: แสดงภาพและข้อความต้อนรับ
     with col1:
         st.markdown("<h1 style='color:white;'>Welcome to POSTO!</h1>", unsafe_allow_html=True)
-        st.image("https://www.pngplay.com/wp-content/uploads/10/Parcel-Box-Transparent-PNG.png", width=300)  # ใส่ลิงก์ภาพ
+        st.image("logo.png", width=300)  # ใส่ลิงก์ภาพ
         st.markdown("<h2 style='color:#f55;'>POSTO</h2>", unsafe_allow_html=True)
 
     # ฝั่งขวา: ฟอร์มล็อกอิน
     with col2:
-        st.image("https://www.google.com/url?sa=i&url=https%3A%2F%2Fth.pngtree.com%2Ffreepng%2Fdelivery-man-with-store-bring-the-package-box_6462643.html&psig=AOvVaw3zcBUtU58OvIEO1OkJwf0I&ust=1728803854336000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNCntuOmiIkDFQAAAAAdAAAAABAE", width=100)  # ใส่ลิงก์ภาพขนาดเล็ก
+        st.image("pic.png", width=100)  # ใส่ลิงก์ภาพขนาดเล็ก
         st.markdown("<h2 style='text-align: center; color: #f55;'>Login</h2>", unsafe_allow_html=True)
 
         if "login_status" not in st.session_state:
