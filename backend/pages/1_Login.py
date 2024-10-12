@@ -98,9 +98,9 @@ def login():
         st.markdown("""<div style='text-align: center;'><span class='small-font'>Don't have an account?</span></div>""", unsafe_allow_html=True)
 
         # สร้างปุ่ม Sign Up
-        signup_button = st.markdown("""
-            <button class="full-width-button" onclick="window.location.href='pages/2_SignUp.py'">Sign Up</button>
-        """, unsafe_allow_html=True)
+        if st.button("Sign Up"):
+            st.session_state.current_page = "Sign Up"  # เปลี่ยนไปยังหน้า Sign Up
+            st.experimental_rerun()  # รีเฟรชหน้า
 
 if __name__ == "__main__":
     login()
