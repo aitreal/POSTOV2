@@ -1,9 +1,5 @@
 import streamlit as st
-import os
-import pandas as pd
-from model import read_name_from_image, crop_and_read_names, save_to_csv, count_names_in_csv
 import pyrebase
-from streamlit_chat import message
 
 # Firebase config
 firebaseConfig = {
@@ -72,17 +68,6 @@ def sign_up():
         st.success("Sign Up สำเร็จ! กรุณาเข้าสู่ระบบ.")
         st.session_state.current_page = "login"  # เปลี่ยนไปยังหน้า Home
         st.switch_page("pages/1_Login.py")  # สลับไปยังหน้า Login
-
-    # ลิงก์ไปยังหน้า Login
-    st.markdown("""
-        <div style='text-align: center;'>
-            <span class='small-font'>Already have an account?</span>
-        </div>
-    """, unsafe_allow_html=True)
-    
-    if st.button("Login"):
-        st.session_state.current_page = "login"  # เปลี่ยนไปยังหน้า Login
-        st.experimental_rerun()  # รีเฟรชหน้า
 
 if __name__ == "__main__":
     sign_up()
