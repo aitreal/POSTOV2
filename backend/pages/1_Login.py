@@ -96,12 +96,11 @@ def login():
 
         # ลิงก์ไปยังหน้า Sign Up
         st.markdown("""<div style='text-align: center;'><span class='small-font'>Don't have an account?</span></div>""", unsafe_allow_html=True)
-        
-        # ทำให้ปุ่ม Sign Up มีขนาดเท่ากับปุ่ม Login
-        if st.button("Sign Up", key="signup_button", help="Create a new account"):
-            # จัดการการสมัครสมาชิกที่นี่
-            st.session_state.current_page = "Sign Up"  # เปลี่ยนไปยังหน้า Sign Up
-            st.switch_page("pages/2_SignUp.py")  # สลับไปยังหน้า Sign Up
+
+        # สร้างปุ่ม Sign Up
+        signup_button = st.markdown("""
+            <button class="full-width-button" onclick="window.location.href='pages/2_SignUp.py'">Sign Up</button>
+        """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
     login()
