@@ -58,6 +58,11 @@ st.markdown("""
         background-size: cover;
         background-position: center;
     }
+    .link {
+        color: #f55;
+        cursor: pointer;
+        text-decoration: underline;
+    }
     </style>
     """, unsafe_allow_html=True)
 
@@ -96,10 +101,9 @@ def sign_up():
             st.session_state.current_page = "login"  # เปลี่ยนไปยังหน้า Home
             st.switch_page("pages/1_Login.py")  # สลับไปยังหน้า Login
 
-        # ปุ่มกลับไปยังหน้า Login
-        if st.button("กลับไปยังหน้า Login"):
-            st.session_state.current_page = "login"  # เปลี่ยนไปยังหน้า Home
-            st.switch_page("pages/1_Login.py")  # สลับไปยังหน้า Login
+        # ข้อความกลับไปยังหน้า Login
+        st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)  # เพิ่มระยะห่าง
+        st.markdown("<span class='link' onclick='window.location.href=\"pages/1_Login.py\"'>กลับไปยังหน้า Login</span>", unsafe_allow_html=True)
 
         st.markdown("</div>", unsafe_allow_html=True)
 
