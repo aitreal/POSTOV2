@@ -45,11 +45,6 @@ st.markdown("""
         font-size: 18px;
         color: white;
     }
-    .login-container {
-        border-radius: 10px;
-        padding: 20px;
-        background-color: #ffffff;  /* เปลี่ยนเป็นสีขาว */
-    }
     </style>
     """, unsafe_allow_html=True)
 
@@ -60,43 +55,42 @@ def login():
     # ฝั่งซ้าย: แสดงภาพและข้อความต้อนรับ
     with col1:
         st.markdown("<h1 style='color:white;'>Welcome to POSTO!</h1>", unsafe_allow_html=True)
-        st.image("https://png.pngtree.com/png-clipart/20201208/original/pngtree-hand-drawn-parcel-delivery-service-elements-png-image_5553220.jpg", width=300)
+        st.image("https://png.pngtree.com/png-clipart/20190904/original/pngtree-green-plant-path-png-image_4461980.jpg", width=300)  # ใส่ลิงก์ภาพ
         st.markdown("<h2 style='color:#f55;'>POSTO</h2>", unsafe_allow_html=True)
 
     # ฝั่งขวา: ฟอร์มล็อกอิน
     with col2:
         st.markdown("<h2 style='text-align: center; color: #f55;'>Login</h2>", unsafe_allow_html=True)
-        
+
         if "login_status" not in st.session_state:
             st.session_state.login_status = None  # ตั้งค่าเริ่มต้นเป็น None
 
-        # สร้างกล่องสำหรับฟอร์มล็อกอิน
-        with st.container():
-            st.markdown("<div class='login-container'>", unsafe_allow_html=True)  # กล่องฟอร์ม
+        # สร้างฟอร์มล็อกอิน
+        email = st.text_input("Email", placeholder="Email")
+        password = st.text_input("Password", placeholder="Password", type="password")
 
-            # สร้างฟอร์มล็อกอิน
-            email = st.text_input("Email", placeholder="Email")
-            password = st.text_input("Password", placeholder="Password", type="password")
+        if st.button("Login"):
+            try:
+                user = auth.sign_in_with_email_and_password(email, password)
+                st.session_state.login_status = "success"
+            except:
+                st.error("Login ไม่สำเร็จ กรุณาตรวจสอบข้อมูลอีกครั้ง.")
+                st.session_state.current_page = "Sign Up"  # เปลี่ยนไปยังหน้า Sign Up
+                st.switch_page("pages/2_SignUp.py")  # สลับไปยังหน้า Sign Up
 
-            if st.button("Login"):
-                try:
-                    user = auth.sign_in_with_email_and_password(email, password)
-                    st.session_state.login_status = "success"
-                except:
-                    st.error("Login ไม่สำเร็จ กรุณาตรวจสอบข้อมูลอีกครั้ง.")
-                    st.session_state.current_page = "Sign Up"  # เปลี่ยนไปยังหน้า Sign Up
-                    st.switch_page("pages/2_SignUp.py")  # สลับไปยังหน้า Sign Up
+        if st.session_state.login_status == "success":
+            st.success("Login สำเร็จ!")
+            st.session_state.current_page = "home"  # เปลี่ยนไปยังหน้า Home
+            st.switch_page("pages/4_Chatbot.py")  # สลับไปยังหน้า Home
 
-            if st.session_state.login_status == "success":
-                st.success("Login สำเร็จ!")
-                st.session_state.current_page = "home"  # เปลี่ยนไปยังหน้า Home
-                st.switch_page("pages/4_Chatbot.py")  # สลับไปยังหน้า Home
-            
-            # ลิงก์ไปยังหน้า Sign Up
-            st.markdown("""<div style='text-align: center;'><span class='small-font'>Don't have an account?</span></div>""", unsafe_allow_html=True)
-            st.button("Sign Up", help="Create a new account")
+        # ลิงก์ไปยังหน้า Sign Up
+        st.markdown("""
+            <div style='text-align: center;'>
+                <span class='small-font'>Don't have an account?</span>
+            </div>
+        """, unsafe_allow_html=True)
 
-            st.markdown("</div>", unsafe_allow_html=True)  # ปิดกล่องฟอร์ม
+        st.button("Sign Up", help="Create a new account")
 
 if __name__ == "__main__":
     login()
