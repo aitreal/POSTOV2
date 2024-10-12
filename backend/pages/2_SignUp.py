@@ -73,7 +73,7 @@ def sign_up():
 
     with col1:
         st.markdown("<div class='image-container'></div>", unsafe_allow_html=True)
-        st.image("")
+        st.image("https://png.pngtree.com/png-clipart/20190904/original/pngtree-green-plant-path-png-image_4461980.jpg", width=300)
     with col2:
         st.title("Sign Up")
         st.markdown("<div class='form-container'>", unsafe_allow_html=True)
