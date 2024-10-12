@@ -29,7 +29,7 @@ st.markdown("""
     .stButton button {
         background-color: #f55;
         color: white;
-        width: 90%;
+        width: 100%;
         border-radius: 8px;
         height: 35px;
         font-size: 18px;
@@ -46,8 +46,7 @@ st.markdown("""
         color: white;
     }
     .full-width-button {
-        width: 90%; /* ทำให้ปุ่มกว้างเต็ม */
-        justify-content: center;
+        width: 100%; /* ทำให้ปุ่มกว้างเต็ม */
         border-radius: 8px;
         height: 35px;
         font-size: 18px;
