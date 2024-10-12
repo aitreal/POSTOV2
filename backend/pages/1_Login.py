@@ -45,6 +45,17 @@ st.markdown("""
         font-size: 18px;
         color: white;
     }
+    .full-width-button {
+        width: 100%; /* ทำให้ปุ่มกว้างเต็ม */
+        border-radius: 8px;
+        height: 45px;
+        font-size: 18px;
+        background-color: #f55;
+        color: white;
+    }
+    .full-width-button:hover {
+        background-color: #ff8787;
+    }
     </style>
     """, unsafe_allow_html=True)
 
@@ -84,13 +95,13 @@ def login():
             st.switch_page("pages/4_Chatbot.py")  # สลับไปยังหน้า Home
 
         # ลิงก์ไปยังหน้า Sign Up
-        st.markdown("""
-            <div style='text-align: center;'>
-                <span class='small-font'>Don't have an account?</span>
-            </div>
-        """, unsafe_allow_html=True)
-
-        st.button("Sign Up", help="Create a new account")
+        st.markdown("""<div style='text-align: center;'><span class='small-font'>Don't have an account?</span></div>""", unsafe_allow_html=True)
+        
+        # ทำให้ปุ่ม Sign Up มีขนาดเท่ากับปุ่ม Login
+        if st.button("Sign Up", key="signup_button", help="Create a new account"):
+            # จัดการการสมัครสมาชิกที่นี่
+            st.session_state.current_page = "Sign Up"  # เปลี่ยนไปยังหน้า Sign Up
+            st.switch_page("pages/2_SignUp.py")  # สลับไปยังหน้า Sign Up
 
 if __name__ == "__main__":
     login()
